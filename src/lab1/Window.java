@@ -48,8 +48,7 @@ public class Window {
 	   
 	private static void createAndShowGUI() {
 		
-		getResultBtn.addActionListener(new ActionListener() {
-			
+		getResultBtn.addActionListener(new ActionListener() {		
 			@Override	
 			public void actionPerformed(ActionEvent e) {
 				wordBuffer = wordInputFld.getText();
@@ -71,20 +70,16 @@ public class Window {
 				}
 			}
 		});
-	
 		
 		letterInputFld.getDocument().addDocumentListener(new DocumentListener() {
 			  public void changedUpdate(DocumentEvent e) {
 				  testBuffer = letterInputFld.getText();			  
-				  //resultOutputMsg.setText(testBuffer);
 			  }
 			  public void removeUpdate(DocumentEvent e) {
 				  testBuffer = letterInputFld.getText();				  
-				  //resultOutputMsg.setText(testBuffer);
 			  }
 			  public void insertUpdate(DocumentEvent e) {
 				  testBuffer = letterInputFld.getText();			  
-				  //esultOutputMsg.setText(testBuffer);
 			  }
 		});
 		
