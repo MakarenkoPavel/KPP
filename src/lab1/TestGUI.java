@@ -1,6 +1,5 @@
 package lab1;
 
-import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.GridBagConstraints;
@@ -8,29 +7,20 @@ import java.awt.GridBagLayout;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.FocusEvent;
-import java.awt.event.FocusListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
-import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-import javax.swing.border.Border;
-import javax.swing.border.EtchedBorder;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 
-public class Window {
-	
-	private static Process operation = new Process();
-	private String Buffer;
-	
+public class TestGUI {
+
 	public static void createAndShowGUI() {
-		
 		JFrame frame = new JFrame("Вариант 17");
 	    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);        
 	    frame.setMinimumSize(new Dimension(210, 125));
@@ -41,58 +31,35 @@ public class Window {
 	    JLabel resultOutputMsg = new JLabel(" ");
 	    
 	    JTextField wordInputFld = new JTextField(10);
-		//JTextField letterInputFld = new JTextField(10);
-		CharTextField letterInputFld = new CharTextField(10, 1);
-	
-		//JButton getResultBtn = new JButton("Посчитать");	
-		ColoredButton getResultBtn = new ColoredButton("Посчитать", Color.WHITE, Color.LIGHT_GRAY);	
+		JTextField letterInputFld = new JTextField(10);
+		
+		JButton getResultBtn = new JButton("Посчитать");
 		
 		/* set event listener to result button */
 		getResultBtn.addActionListener(new ActionListener() {		
 			@Override	
-			public void actionPerformed(ActionEvent event) {
-				operation.setWord(wordInputFld.getText());
-				operation.setLetter(letterInputFld.getText());
-				resultOutputMsg.setText(operation.getResult());
+			public void actionPerformed(ActionEvent e) {
+				resultOutputMsg.setText("123");
 			}
 		});
 		
-		/* add focus listener to text fields */
-		wordInputFld.addFocusListener(new FocusListener() {
-
-            @Override
-            public void focusGained(FocusEvent event) {
-               	
-            	wordInputFld.setBorder(BorderFactory.createMatteBorder(
-                                    3, 1, 1, 1, Color.GRAY));
-            }
-
-            @Override
-            public void focusLost(FocusEvent event) {
-
-            	wordInputFld.setBorder(BorderFactory.createMatteBorder(
-                        1, 1, 1, 1, Color.LIGHT_GRAY));
-            }
-        });
+		wordInputFld.addKeyListener(new KeyListener() {			 
+			@Override
+		    public void keyTyped(KeyEvent event) {
+				letterInputMsg.setText(wordInputFld.getText());
+		    }
+		 
+		    @Override
+		    public void keyReleased(KeyEvent event) {
+		    	letterInputMsg.setText(wordInputFld.getText());
+		    }
+		 
+		    @Override
+		    public void keyPressed(KeyEvent event) {
+		    	letterInputMsg.setText(wordInputFld.getText());
+		    }
+		});
 		
-		letterInputFld.addFocusListener(new FocusListener() {
-
-            @Override
-            public void focusGained(FocusEvent event) {
-            
-            	letterInputFld.setBorder(BorderFactory.createMatteBorder(
-                        3, 1, 1, 1, Color.GRAY));      	
-            }
-
-            @Override
-            public void focusLost(FocusEvent event) {
-
-            	letterInputFld.setBorder(BorderFactory.createMatteBorder(
-                        1, 1, 1, 1, Color.LIGHT_GRAY));
-            }
-        });
-			
-	
 		/* set event listener to input field */
 		
 		
@@ -136,8 +103,7 @@ public class Window {
 	    frame.setVisible(true);
 	}
 	
-	public static void main(String[] args) {
-		
+	public static void main() {
 		javax.swing.SwingUtilities.invokeLater(new Runnable() {
             public void run() {
             	createAndShowGUI();
