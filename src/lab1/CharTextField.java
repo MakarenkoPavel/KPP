@@ -8,11 +8,25 @@ import javax.swing.JTextField;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 
+
+/**
+ * {@code CharTextField} class implements override of {@code JTextField}
+ * with new event listeners
+ * 
+ * @author pavel
+ * @version 1.0
+ */
 public class CharTextField extends JTextField {
 	
 	private String buffer;
 	private int limit;
 	
+	/**
+	 * Initialization constructor
+	 * 
+	 * @param len		length of text field
+	 * @param limit		limits chars to input
+	 */
 	public CharTextField(int len, int limit) {
 		super(len);
 		this.limit = limit;

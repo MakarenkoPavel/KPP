@@ -24,11 +24,21 @@ import javax.swing.border.EtchedBorder;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 
+/**
+ * {@code Window} class is the main class of application.
+ * This class designed to setup all GUI functional
+ * 
+ * @author pavel
+ * @version 1.0
+ */
 public class Window {
 	
 	private static Process operation = new Process();
 	private String Buffer;
 	
+	/*
+	 * Setup all GUI components
+	 */
 	public static void createAndShowGUI() {
 		
 		JFrame frame = new JFrame("Вариант 17");
@@ -91,9 +101,6 @@ public class Window {
                         1, 1, 1, 1, Color.LIGHT_GRAY));
             }
         });
-			
-	
-		/* set event listener to input field */
 		
 		
 		/* setup top level panels */
@@ -136,6 +143,9 @@ public class Window {
 	    frame.setVisible(true);
 	}
 	
+	/*
+	 * The main method
+	 */
 	public static void main(String[] args) {
 		
 		javax.swing.SwingUtilities.invokeLater(new Runnable() {
