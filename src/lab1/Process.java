@@ -1,7 +1,7 @@
 package lab1;
 
 /**
- * {@code Process} class provide functional to count letters in the word
+ * {@code Process} class provide functional to count letters in the word.
  * 
  * @author pavel
  * @version 1.0
@@ -12,27 +12,25 @@ public class Process {
 	private String letter;
 	
 	/**
-	 * Set world to count
+	 * Set world to count.
 	 * 
 	 * @param word 		new word
 	 */
-	public void setWord(String word) {
-		
+	public void setWord(String word) {		
 		this.word = word;
 	}
 	
 	/**
-	 * Set letter to count
+	 * Set letter to count.
 	 * 
 	 * @param letter	new letter
 	 */	
-	public void setLetter(String letter) {
-		
+	public void setLetter(String letter) {	
 		this.letter = letter;
 	}
 	
 	/**
-	 * Return current word
+	 * Return current word.
 	 * 
 	 * @return		word
 	 */
@@ -42,17 +40,16 @@ public class Process {
 	}
 	
 	/**
-	 * Return current letter
+	 * Return current letter.
 	 * 
 	 * @return		letter
 	 */
-	public String getLetter() {
-		
+	public String getLetter() {		
 		return letter;
 	}
 	
 	/**
-	 * This method return count of the letters in the word
+	 * This method return count of the letters in the word.
 	 * 
 	 * @return		how many letters in the word
 	 */

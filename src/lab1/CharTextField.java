@@ -2,7 +2,6 @@ package lab1;
 
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 
 import javax.swing.JTextField;
 import javax.swing.event.DocumentEvent;
@@ -11,7 +10,7 @@ import javax.swing.event.DocumentListener;
 
 /**
  * {@code CharTextField} class implements override of {@code JTextField}
- * with new event listeners
+ * with new event listeners.
  * 
  * @author pavel
  * @version 1.0
@@ -22,7 +21,7 @@ public class CharTextField extends JTextField {
 	private int limit;
 	
 	/**
-	 * Initialization constructor
+	 * Initialization constructor.
 	 * 
 	 * @param len		length of text field
 	 * @param limit		limits chars to input
@@ -30,7 +29,7 @@ public class CharTextField extends JTextField {
 	public CharTextField(int len, int limit) {
 		super(len);
 		this.limit = limit;
-		
+	
 		this.getDocument().addDocumentListener(new DocumentListener() {
 			  public void changedUpdate(DocumentEvent e) {
 				  
@@ -43,15 +42,17 @@ public class CharTextField extends JTextField {
 				  System.out.println(buffer);
 			  }
 			  public void insertUpdate(DocumentEvent e) {
+				  
 				  buffer = getText();
 				  System.out.println(buffer);
 			  }
 			});
-		
+				
 		this.addKeyListener(new KeyAdapter() {
 		    public void keyTyped(KeyEvent e) { 
-		        if (getText().length() >= limit) 
-		            e.consume(); 
+		        if (getText().length() >= limit) {
+		        	 e.consume(); 
+		        }		            
 		    }  
 		});
 			
